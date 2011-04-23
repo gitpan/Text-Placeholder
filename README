@@ -1,0 +1,5 @@
+Text::Placeholder - a simple placeholder system for text
+
+This is an experimental module. Text::Placeholder substitutes symbolic placeholders in a text with actual values. The core package is less than 120 lines of Perl code. Text::Placeholder can produce SQL statements, directory listings or parts of HTML pages. It is normally used in a multi-layer concept for assembling larger texts, e.g. a HTML page.
+
+

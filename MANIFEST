@@ -1,0 +1,35 @@
+Changes
+examples/Aggregator.tst
+examples/Counter.tst
+examples/Counter_File.tst
+examples/Name.tst
+examples/Perl_Inlined.tst
+examples/Placeholder.tst
+examples/Properties.tst
+examples/Result.tst
+examples/Statement.tst
+examples/URI.tst
+INSTALL
+lib/Text/Placeholder.pm
+lib/Text/Placeholder.pod
+lib/Text/Placeholder/_.pm
+lib/Text/Placeholder/Aggregator.pm
+lib/Text/Placeholder/Aggregator.pod
+lib/Text/Placeholder/Counter.pm
+lib/Text/Placeholder/Counter.pod
+lib/Text/Placeholder/OS/Unix/File/Name.pm
+lib/Text/Placeholder/OS/Unix/File/Name.pod
+lib/Text/Placeholder/OS/Unix/File/Properties.pm
+lib/Text/Placeholder/OS/Unix/File/Properties.pod
+lib/Text/Placeholder/Perl_Inlined.pm
+lib/Text/Placeholder/Perl_Inlined.pod
+lib/Text/Placeholder/SQL/Result.pm
+lib/Text/Placeholder/SQL/Result.pod
+lib/Text/Placeholder/SQL/Statement.pm
+lib/Text/Placeholder/SQL/Statement.pod
+lib/Text/Placeholder/URI.pm
+lib/Text/Placeholder/URI.pod
+Makefile.PL
+MANIFEST			This list of files
+README
+META.yml                                 Module meta-data (added by MakeMaker)
