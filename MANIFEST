@@ -19,6 +19,7 @@ lib/Text/Placeholder/Counter.pm
 lib/Text/Placeholder/Counter.pod
 lib/Text/Placeholder/OS/Unix/File/Name.pm
 lib/Text/Placeholder/OS/Unix/File/Name.pod
+lib/Text/Placeholder/OS/Unix/File/Name.tst
 lib/Text/Placeholder/OS/Unix/File/Properties.pm
 lib/Text/Placeholder/OS/Unix/File/Properties.pod
 lib/Text/Placeholder/Perl_Inlined.pm

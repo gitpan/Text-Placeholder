@@ -18,7 +18,7 @@ Text::Placeholder::URI - symbolic access to parts of an URI
 
 A proof-of-concept module.
 
-Text::Placeholder::URI provides the placeholder symbols 'uri_(scheme|opaque|host|path|full)'.
+Text::Placeholder::URI provides the placeholders 'uri_(scheme|opaque|host|path|full)'.
 
 
 =head1 METHOD REFERENCE (API)

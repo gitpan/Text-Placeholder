@@ -16,7 +16,7 @@ Text::Placeholder::OS::Unix::File::Properties - access properties of a file
 
 =head1 DESCRIPTION
 
-Provides the placeholder symbols file_(owner_id|owner_name|group_id|group_name|size|timestamp_creation|timestamp_modification|timestamp_status). The file must exists. Can be used on the same name together with ::OS::Unix::File::Name via ::Aggregator.
+Provides the placeholders file_(owner_id|owner_name|group_id|group_name|size|timestamp_creation|timestamp_modification|timestamp_status). The file must exists. Can be used on the same name together with ::OS::Unix::File::Name via ::Aggregator.
 
 =head1 METHOD REFERENCE (API)
 

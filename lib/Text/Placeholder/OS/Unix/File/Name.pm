@@ -10,20 +10,20 @@ use parent qw(
 
 sub THIS() { 0 }
 
-sub ATR_SYMBOLS() { 0 }
+sub ATR_PLACEHOLDERS() { 0 }
 sub ATR_SUBJECT() { 1 }
 
-my $SYMBOLS = {
+my $PLACEHOLDERS = {
 	'file_name_full' => sub { return($_[THIS][ATR_SUBJECT][0])},
 	'file_name_path' => sub { return($_[THIS][ATR_SUBJECT][1])},
-	'file_name_only' => sub { return($_[THIS][ATR_SUBJECT][2])},
+	'file_name_base' => sub { return($_[THIS][ATR_SUBJECT][2])},
 	'file_name_extension' => sub { return($_[THIS][ATR_SUBJECT][3])},
 };
 
 sub _init {
 	my ($this) = @_;
 
-	$this->[ATR_SYMBOLS] = $SYMBOLS;
+	$this->[ATR_PLACEHOLDERS] = $PLACEHOLDERS;
 	$this->[ATR_SUBJECT] = [];
 
 	return;

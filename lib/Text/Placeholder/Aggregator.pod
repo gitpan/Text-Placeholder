@@ -20,7 +20,7 @@ Text::Placeholder::Aggregator - groups groups
 
 =head1 DESCRIPTION
 
-Provides the placeholder symbols of the registered groups. Rationale: there are cases where you want to set the subject only once.
+Provides the placeholders of the registered groups. Rationale: there are cases where you want to set the subject only once.
 
 =head1 METHOD REFERENCE (API)
 

@@ -16,7 +16,7 @@ Text::Placeholder::OS::Unix::File::Name - access name parts of a file
 
 =head1 DESCRIPTION
 
-Provides the placeholder symbols file_name_(full|path|only|extension). The file doesn't needs to exists.
+Provides the placeholders file_name_(full|path|only|extension). The file doesn't needs to exists.
 
 =head1 METHOD REFERENCE (API)
 

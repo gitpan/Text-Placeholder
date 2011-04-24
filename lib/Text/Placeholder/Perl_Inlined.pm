@@ -30,10 +30,10 @@ sub _init {
 	return;
 }
 
-sub P_SYMBOL() { 1 }
+sub P_PLACEHOLDER() { 1 }
 sub lookup {
-	$_[THIS]->subject($_[P_SYMBOL]);
-	return([$sub_eval_shift, $_[P_SYMBOL]]);
+	$_[THIS]->subject($_[P_PLACEHOLDER]);
+	return([$sub_eval_shift, $_[P_PLACEHOLDER]]);
 }
 
 sub P_CODE() { 1 }

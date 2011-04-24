@@ -18,7 +18,7 @@ Text::Placeholder::SQL::Statement - construct preparable SQL statements
 
 =head1 DESCRIPTION
 
-Provides placeholder symbols based on a configurable RE. All placeholders matching the RE are substituted by question marks. A list of matches can be obtained.
+Provides placeholders based on a configurable RE. All placeholders matching the RE are substituted by question marks. A list of matches can be obtained.
 
 =head1 METHOD REFERENCE (API)
 

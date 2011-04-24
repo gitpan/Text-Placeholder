@@ -17,7 +17,7 @@ Text::Placeholder::Perl_Inlined - execute Perl code
 
 Adding this placeholder group may be a security risk depending on the actual use. It's only a proof-of-concept module.
 
-Text::Placeholder::Perl_Inlined provides no specific placeholder symbols. Instead any symbol is treated as perl code.
+Text::Placeholder::Perl_Inlined provides no specific placeholders. Instead any placeholder is treated as perl code.
 
 
 =head1 METHOD REFERENCE (API)

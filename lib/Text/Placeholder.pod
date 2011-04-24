@@ -27,15 +27,15 @@ Text::Placeholder substitutes symbolic placeholders in a text with actual values
 
 Text::Placeholder can produce SQL statements, directory listings or parts of HTML pages. It is normally used in a multi-layer concept for assembling larger texts, e.g. a HTML page.
 
-
 =head2 Template Systems
 
-The term template is mostly refers to mixtures of languages. The most advanced and widely used template system is probably PHP, which mixes HTML with a straightforward programming language. There is no point in trying to re-invent or imitate PHP. Thus Text::Placeholder only provides simple placeholders and not a language of its own. For example, there are no variables and no conditionals. Once you understand Text::Placeholder, you will see the alternative to language mixing.
+The term template commonly refers to mixtures of languages. The most advanced and widely used template system is probably PHP, which mixes HTML with a straightforward programming language. There is no point in trying to re-invent or imitate PHP. Thus Text::Placeholder only provides simple placeholders and not a language of its own. For example, there are no variables and no conditionals. Once you understand Text::Placeholder, you will see the alternative to language mixing.
 
+::Perl_Inlined is a proof-of-concept module only, which over-stretches Text::Placeholder to deal with wildcards. There are no plans to maintain it or develop it further. Outside the formatting text a non-linear effect can be handled much better.
 
 =head1 METHOD REFERENCE (API)
 
-The design goal was a simple and robust API with a straightforward implementation, respecting all limitations of Perl 5. $obj refers to a Text::Placeholder object.
+The design goal was a simple and robust API with a straightforward implementation, respecting all limitations of Perl 5.
 
 =over 8
 
@@ -73,17 +73,21 @@ The following is an overview of the groups shipped with Text::Placeholder.
 
 =over 8
 
+=item L<::Aggregator|Text::Placeholder::Aggregator>
+
+Groups placeholder groups, which share the same subject. For example, the subject is the file name for OS::Unix::File::Name/Properties.
+
 =item L<::Counter|Text::Placeholder::Counter>
 
 Provides the placeholder symbol 'counter'. Increments the counter each time 'execute' is called.
 
 =item L<::URI|Text::Placeholder::URI>
 
-Provides the placeholder symbols uri_(scheme|opaque|host|path|full). A proof-of-concept.
+Provides the placeholder symbols uri_(scheme|opaque|host|path|full). A proof-of-concept module.
 
 =item L<::Perl_Inlined|Text::Placeholder::Perl_Inlined>
 
-Provides no specific placeholder symbols. Instead any symbol is treated as perl code.
+Provides no specific placeholder symbols. Instead any symbol is treated as perl code. A proof-of-concept module.
 
 =item L<::OS::Unix::File::Name|Text::Placeholder::OS::Unix::File::Name>
 
@@ -109,7 +113,7 @@ You might want to search CPAN for placeholder groups, which are distributed sepa
 
 This is the first public release.
 
-Text::Placeholder was part of a bigger software project and has recently been separated. However, the style of the code should be good enough for an initial release.
+Text::Placeholder was part of a bigger software project and has recently been separated. However, the quality of the code should be good enough for an initial release.
 
 
 =head1 AUTHOR

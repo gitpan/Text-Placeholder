@@ -11,10 +11,10 @@ use parent qw(
 
 sub THIS() { 0 }
 
-sub ATR_SYMBOLS() { 0 }
+sub ATR_PLACEHOLDERS() { 0 }
 sub ATR_URI() { 1 }
 
-my $SYMBOLS = {
+my $PLACEHOLDERS = {
 	'uri_scheme' => sub { return($_[THIS][ATR_URI]->scheme)},
 	'uri_host' => sub { return($_[THIS][ATR_URI]->host)},
 	'uri_path' => sub { return($_[THIS][ATR_URI]->path)},
@@ -23,7 +23,7 @@ my $SYMBOLS = {
 };
 
 sub _init {
-	$_[THIS][ATR_SYMBOLS] = $SYMBOLS;
+	$_[THIS][ATR_PLACEHOLDERS] = $PLACEHOLDERS;
 	$_[THIS][ATR_URI] = undef;
 	return;
 }

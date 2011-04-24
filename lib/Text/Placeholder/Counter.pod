@@ -18,7 +18,7 @@ Text::Placeholder::Counter - counts execution of placeholder substitution
 
 =head1 DESCRIPTION
 
-Text::Placeholder::Counter provides the placeholder symbol 'counter'. Increments the counter each time 'execute' is called.
+Text::Placeholder::Counter provides the placeholder 'counter'. Increments the counter each time 'execute' is called.
 
 
 =head1 METHOD REFERENCE (API)

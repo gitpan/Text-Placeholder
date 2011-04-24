@@ -24,11 +24,11 @@ sub as_rwx_string($) {
 
 sub THIS() { 0 }
 
-sub ATR_SYMBOLS() { 0 }
+sub ATR_PLACEHOLDERS() { 0 }
 sub ATR_SUBJECT() { 1 }
 sub ATR_STAT() { 2 }
 
-my $SYMBOLS = {
+my $PLACEHOLDERS = {
 	'file_mode_octal' => sub { return($_[THIS][ATR_STAT][2])},
 	'file_mode_rwx' => sub { return(as_rwx_string($_[THIS][ATR_STAT][2]))},
 	'file_owner_id' => sub { return($_[THIS][ATR_STAT][4])},
@@ -44,7 +44,7 @@ my $SYMBOLS = {
 sub _init {
 	my ($this) = @_;
 
-	$this->[ATR_SYMBOLS] = $SYMBOLS;
+	$this->[ATR_PLACEHOLDERS] = $PLACEHOLDERS;
 	$this->[ATR_SUBJECT] = undef;
 	$this->[ATR_STAT] = [];
 

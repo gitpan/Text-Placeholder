@@ -10,17 +10,17 @@ use parent qw(
 
 sub THIS() { 0 }
 
-sub ATR_SYMBOLS() { 0 }
+sub ATR_PLACEHOLDERS() { 0 }
 sub ATR_COUNTER() { 1 }
 
-my $SYMBOLS = {
+my $PLACEHOLDERS = {
 	'counter' => sub { return($_[THIS][ATR_COUNTER]++)},
 };
 
 sub _init {
 	my ($this) = @_;
 
-	$this->[ATR_SYMBOLS] = $SYMBOLS;
+	$this->[ATR_PLACEHOLDERS] = $PLACEHOLDERS;
 	$this->[ATR_COUNTER] = 1;
 
 	return;
