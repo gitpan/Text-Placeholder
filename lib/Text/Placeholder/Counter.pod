@@ -31,6 +31,10 @@ The design goal was a simple and robust API with a straightforward implementatio
 
 Resets the counter to one.
 
+=item add_placeholder($placeholder, $code_ref)
+
+Adds the $code_ref under the name of $placeholder. $code_ref is executed and returns the current value to be substituted for $placeholder.
+
 =back
 
 

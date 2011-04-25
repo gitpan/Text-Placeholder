@@ -6,7 +6,7 @@ use Carp qw();
 use parent qw(
 	Object::By::Array);
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 sub P_PLACEHOLDER_RE() { 0 }
 sub build_parser($) {

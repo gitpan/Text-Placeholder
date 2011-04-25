@@ -26,6 +26,10 @@ Provides the placeholders file_name_(full|path|only|extension). The file doesn't
 
 Sets or gets the file name.
 
+=item add_placeholder($placeholder, $code_ref)
+
+Adds the $code_ref under the name of $placeholder. $code_ref is executed and returns the current value to be substituted for $placeholder.
+
 =back
 
 =head1 KNOWN BUGS AND LIMITATIONS

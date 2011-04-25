@@ -29,6 +29,10 @@ Text::Placeholder::URI provides the placeholders 'uri_(scheme|opaque|host|path|f
 
 Sets or gets the string representation of the URI.
 
+=item add_placeholder($placeholder, $code_ref)
+
+Adds the $code_ref under the name of $placeholder. $code_ref is executed and returns the current value to be substituted for $placeholder.
+
 =back
 
 

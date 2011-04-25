@@ -2,35 +2,33 @@
 
 =head1 NAME
 
-Text::Placeholder::OS::Unix::File::Properties - access properties of a file
+Text::Placeholder::Generic - a basket to be filled with placeholders
 
 =head1 SYNOPSIS
 
 	use Text::Placeholder;
 	my $placeholder = Text::Placeholder->new(
-		my $os_unix_file = '::OS::Unix::File::Properties');
-	$placeholder->compile('[=file_timestamp_modification=] / [=file_owner_name=] / [=file_mode_rwx=]');
+		my $generic = '::Generic');
+	$generic->add_placeholder('some_value', sub { return(time()%86400) });
 
-	$os_unix_file->subject('/etc/hosts');
+	$placeholder->compile('Some value: [=some_value=]');
 	print ${$placeholder->execute()}, "<-\n";
 
 =head1 DESCRIPTION
 
-Provides the placeholders file_(owner_id|owner_name|group_id|group_name|size|timestamp_creation|timestamp_modification|timestamp_status). The file must exists. Can be used on the same name together with ::OS::Unix::File::Name via ::Aggregator.
+Text::Placeholder::Generic provides no placeholders by default. Any sense has to be added via add_placeholder (see below). Keep in mind that the placeholders have to be added before compilation.
+
 
 =head1 METHOD REFERENCE (API)
 
 =over 8
-
-=item subject($file_name)
-
-Sets or gets the file name.
 
 =item add_placeholder($placeholder, $code_ref)
 
 Adds the $code_ref under the name of $placeholder. $code_ref is executed and returns the current value to be substituted for $placeholder.
 
 =back
+
 
 =head1 KNOWN BUGS AND LIMITATIONS
 

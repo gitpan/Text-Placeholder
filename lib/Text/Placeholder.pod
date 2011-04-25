@@ -8,30 +8,27 @@ Text::Placeholder - simple placeholder system for text
 
 	use Text::Placeholder;
 	my $placeholder = Text::Placeholder->new(
-		my $counter = '::Counter');
-	$placeholder->compile('Counter: [=counter=]');
+		my $counter = '::Counter',
+		my $name = '::OS::Unix::File::Name');
+	$placeholder->compile('#[=counter=]. [=file_name_base=]');
 
-	print ${$placeholder->execute()}, "<-\n";
-	print ${$placeholder->execute()}, "<-\n";
-	$counter->reset;
-	print ${$placeholder->execute()}, "<-\n";
-
-=head1 WARNINGS
-
-This is an experimental module. It hasn't been thoroughly tested, making the probability of fatal bugs quite high. The sole goal of the release is to document the current development.
-
+	my @file_names = qw(/etc/hosts /etc/resolv.conf /etc/passwd);
+	foreach my $file_name (@file_names) {
+		$name->subject($file_name);
+		print ${$placeholder->execute()}, "\n";
+	}
 
 =head1 DESCRIPTION
 
 Text::Placeholder substitutes symbolic placeholders in a text with actual values. The core package is less than 120 lines of Perl code. There is hardly intelligence or convenience in the core, because work is delegated to special objects. Thus the approach stays small and extensible.
 
-Text::Placeholder can produce SQL statements, directory listings or parts of HTML pages. It is normally used in a multi-layer concept for assembling larger texts, e.g. a HTML page.
+Values are provided by special classes called placeholder groups. Different groups can be combined and placeholder resolution is done in the given order of the groups. In the synopsis a counter and a file name group are combined to create a listing.
 
 =head2 Template Systems
 
 The term template commonly refers to mixtures of languages. The most advanced and widely used template system is probably PHP, which mixes HTML with a straightforward programming language. There is no point in trying to re-invent or imitate PHP. Thus Text::Placeholder only provides simple placeholders and not a language of its own. For example, there are no variables and no conditionals. Once you understand Text::Placeholder, you will see the alternative to language mixing.
 
-::Perl_Inlined is a proof-of-concept module only, which over-stretches Text::Placeholder to deal with wildcards. There are no plans to maintain it or develop it further. Outside the formatting text a non-linear effect can be handled much better.
+::Perl_Inlined is a proof-of-concept module only, which over-stretches Text::Placeholder to deal with wildcards. There are no plans to maintain it or develop it further. A non-linear effect can be handled much easier outside the text to be formatted.
 
 =head1 METHOD REFERENCE (API)
 
@@ -49,7 +46,7 @@ Parses a given string and stores a representation suitable for fast execution. W
 
 =item execute
 
-Returns a string ref with all placeholders substituted by actual values. Work is delegated to placeholder groups. Calling it multiple times makes sense if the data of a placeholder group is modified in between two calls.
+Executes the compiled text. Returns a string ref with all placeholders substituted by actual values. Work is delegated to placeholder groups. Calling it multiple times makes sense if the data of a placeholder group is modified in between two calls.
 
 =item parser($specification) or parser
 
@@ -77,33 +74,37 @@ The following is an overview of the groups shipped with Text::Placeholder.
 
 Groups placeholder groups, which share the same subject. For example, the subject is the file name for OS::Unix::File::Name/Properties.
 
+=item L<::Counter|Text::Placeholder::Generic>
+
+Provides no placeholders by default. Any sense has to be added via add_placeholder.
+
 =item L<::Counter|Text::Placeholder::Counter>
 
-Provides the placeholder symbol 'counter'. Increments the counter each time 'execute' is called.
+Provides the placeholder 'counter'. Increments the counter each time 'execute' is called.
 
 =item L<::URI|Text::Placeholder::URI>
 
-Provides the placeholder symbols uri_(scheme|opaque|host|path|full). A proof-of-concept module.
+Provides the placeholders uri_(scheme|opaque|host|path|full). A proof-of-concept module.
 
 =item L<::Perl_Inlined|Text::Placeholder::Perl_Inlined>
 
-Provides no specific placeholder symbols. Instead any symbol is treated as perl code. A proof-of-concept module.
+Provides no specific placeholders. Instead any placeholder is treated as perl code. A proof-of-concept module.
 
 =item L<::OS::Unix::File::Name|Text::Placeholder::OS::Unix::File::Name>
 
-Provides the placeholder symbols file_(name_full|name_path|name_only|name_extension). The file doesn't needs to exists.
+Provides the placeholders file_(name_full|name_path|name_only|name_extension). The file doesn't need to exists.
 
 =item L<::OS::Unix::File::Properties|Text::Placeholder::OS::Unix::File::Properties>
 
-Provides the placeholder symbols file_(owner_id|owner_name|group_id|group_name|size|timestamp_creation|timestamp_modification|timestamp_status). The file needs to exists. Can be used together with ::OS::Unix::File::Name via ::Aggregator for the name.
+Provides the placeholders file_(owner_id|owner_name|group_id|group_name|size|timestamp_creation|timestamp_modification|timestamp_status). The file must exist. Can be used together with ::OS::Unix::File::Name via ::Aggregator for the name.
 
 =item L<::SQL::Result|Text::Placeholder::SQL::Result>
 
-Provides placeholder symbols based on a configurable RE, which needs one capture group. Placeholders substituted by the captured pattern. A list of captures can be obtained. In between two calls to execute the row data is changed.
+Provides placeholders based on a configurable RE, which requires one capture group. Placeholders substituted by the captured pattern. A list of captures can be obtained. In between two calls to execute the row data is changed.
 
 =item L<::SQL::Statement|Text::Placeholder::SQL::Statement>
 
-Provides placeholder symbols based on a configurable RE. All placeholders matching the RE are substituted by question marks. A list of matches can be obtained.
+Provides placeholders based on a configurable RE. All placeholders matching the RE are substituted by question marks. A list of matches can be obtained.
 
 =back
 

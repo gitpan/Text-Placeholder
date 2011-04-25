@@ -2,6 +2,7 @@ Changes
 examples/Aggregator.tst
 examples/Counter.tst
 examples/Counter_File.tst
+examples/Generic.tst
 examples/Name.tst
 examples/Perl_Inlined.tst
 examples/Placeholder.tst
@@ -17,6 +18,8 @@ lib/Text/Placeholder/Aggregator.pm
 lib/Text/Placeholder/Aggregator.pod
 lib/Text/Placeholder/Counter.pm
 lib/Text/Placeholder/Counter.pod
+lib/Text/Placeholder/Generic.pm
+lib/Text/Placeholder/Generic.pod
 lib/Text/Placeholder/OS/Unix/File/Name.pm
 lib/Text/Placeholder/OS/Unix/File/Name.pod
 lib/Text/Placeholder/OS/Unix/File/Name.tst
