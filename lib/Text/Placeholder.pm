@@ -6,7 +6,7 @@ use Carp qw();
 use parent qw(
 	Object::By::Array);
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 sub P_PLACEHOLDER_RE() { 0 }
 sub build_parser($) {
@@ -76,7 +76,7 @@ sub add_group {
 				Carp::confess("Invalid package name '$group'.");
 			}
 			if(substr($group, 0, 2) eq '::') {
-				$group = __PACKAGE__."$group";
+				$group = __PACKAGE__."::Group$group";
 			}
 			eval "use $group;";
 			Carp::confess($@) if ($@);

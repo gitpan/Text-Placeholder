@@ -6,5 +6,6 @@ WriteMakefile(
 	'AUTHOR'	=> 'Winfried Trumper <pub+perl@wt.tuxomania.net>',
 	'LICENSE'	=> 'perl',
 	'PREREQ_PM'	  => {
+		'Object::By' => '0.01'
 	},
 );
